@@ -1,0 +1,67 @@
+import React, { useState } from "react";
+
+const messages = [
+  "Hai pacarku yang paling cantikkk ❤️",
+  "Gimana harimu? semoga baik-baik aja yaa",
+  "Berhubung ini hari valentine, ak mau kasih sesuatu buat kamuu 💕",
+  "Makasih ya udah mau nerima ak dengan apa adanya, meski kamu tau ak ga masuk tipe idealmu",
+  "Jadiii, ini Satria (alias iyakk), Anak yang baru kenalan sama vega kurleb 3 bulan lalu. Aku tau kok 3 bulan itu waktu yang singkat, apalagi kita bisa sampe tahap ini wkwkwkwk",
+  "But you know> aku ngerasa kek udah lama banget, hehehe",
+  "Sayangku, aku bersyukur banget & so gratefull bisa dapetin kamu. I'm so happy with you~",
+  "Hadirmu bener-bener make my day much better than before",
+  "You know? Aku pernah hampir mati rasa & nutup hati. Tapi kmu dateng di hidupku dan terbuka ke aku, itu yang buat aku gagal nutup hati",
+  "So, im beggin you, darlin. Always be my home, and make me yours too ❤️",
+  "Ajak aku disetiap prosesmu, ngeluh ke aku tiap kali kamu mau capek, dan nangislah di pelukanku setiap kamu sedih",
+  "Ketawa sama aku setiap kamu bahagia, dan ceritain tentang apapun itu, ajak aku disetiap proses hidupmu. Karna aku ga main-main sama kamu, you're the 1 and only 1 sayangkuuu",
+  "Maaf ya kalo aku sering bikin kamu ngambek, marah, sering ngerepotin, bahkan kadang bikin kamu kecewa",
+  "Just wanna you to know, that i'm so lucky having you, Vega Aqmarina nur Abroor",
+  "Cowomu ini tu, cwo yang punya segudang kekurangan, udah gitu random & aneh pula, tapi nekad mencintai cwe sekelas pendekar wkwkwk",
+  "Memang sih, keknya aku bukan yang terbaik, tapi aku usahain semaksimalku buat jadi yang terbaik buatmu~",
+  "Oiya, maaf ya kalo aku haus perhatian darimu, sering banget manja, sering butuh waktumu, bahkan nguras energimu... Soalnya, i need you, and i just have you, babe. Aku ga pengen ngelewatin berbagai hal pas sama kamu (even itu cuma hal kecil)",
+  "Sooo, last but not least, ily more than everyone else. I just wanna be with you, forever, Vega Aqmarina Nur Abroor, cweku, sayangku, rumahku, (baca selengkapnya)",
+  "I'll always love you, be with you, and here for you in all conditions, aamiin",
+  "Oh iya, 1 lagi",
+  "Selamat Hari Valentine, sayangkuuu💘"
+];
+
+function ValentineMessages() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextMessage = () => {
+    if (currentIndex < messages.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const previousMessage = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-pink-300 to-red-300">
+      <div className="bg-white p-8 rounded shadow-lg max-w-xl text-center">
+        <p className="text-xl text-gray-800">{messages[currentIndex]}</p>
+        <div className="mt-6 flex justify-center space-x-4">
+          <button
+            onClick={previousMessage}
+            disabled={currentIndex === 0}
+            className="px-4 py-2 bg-red-500 text-white rounded disabled:opacity-50"
+          >
+            Previous
+          </button>
+          <button
+            onClick={nextMessage}
+            disabled={currentIndex === messages.length - 1}
+            className="px-4 py-2 bg-red-500 text-white rounded disabled:opacity-50"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default ValentineMessages;
